@@ -5,7 +5,7 @@ import classes from "./Navigation.module.css";
 
 //consumer - takes a child (function), with an argument the context data and return the JSX code
 //then we have access to the isLoggedIn prop with context object
-const Navigation = (props) => {
+const Navigation = () => {
   const context = useContext(AuthContext);
 
   return (
@@ -23,7 +23,7 @@ const Navigation = (props) => {
         )}
         {context.isLoggedIn && (
           <li>
-            <button onClick={props.onLogout}>Logout</button>
+            <button onClick={context.onLogout}>Logout</button>
           </li>
         )}
       </ul>
